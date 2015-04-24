@@ -1,10 +1,9 @@
 //make passwords
 
 function makePasswords() {
-    var text = [];
     var hold = "";
-    var possibleOld = "!#$%&*-0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ^abcdefghijklmnopqrstuvwxyz";
-    var possible = "abcdefghi"
+    var possibleProd = "!#$%&*-0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ^abcdefghijklmnopqrstuvwxyz";
+    var possible = "abcdefgh";
     
     for (var i = 0; i < possible.length; ++i) {
         for (var j = 0; j < possible.length; ++j) {
