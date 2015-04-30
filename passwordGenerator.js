@@ -1,4 +1,5 @@
 //make passwords
+var fs = require('fs');
 
 function makePasswords() {
     var hold = "";
@@ -6,7 +7,7 @@ function makePasswords() {
     var possible = "abcdefgh";
     
     for (var i = 0; i < possible.length; ++i) {
-        for (var j = 0; j < possible.length; ++j) {
+        for (var j =  0; j < possible.length; ++j) {
             for (var k = 0; k < possible.length; ++k) {
                 for (var l = 0; l < possible.length; ++l) {
                     for (var m = 0; m < possible.length; ++m) {
@@ -22,7 +23,16 @@ function makePasswords() {
                                         hold += possible.charAt(0 + o);
                                         hold += possible.charAt(0 + p);
                                         
-                                        console.log(hold);
+                                        //console.log(hold);
+                                        
+                                        fs.appendFile("/development/test.out", hold + "\n", function( err ) {
+                                            if( err ){
+                                                return console.log( err );
+                                            }
+                                            
+                                            console.log("file saved");
+                                        } );
+                                        
                                         hold = "";
                                 }
                             }
