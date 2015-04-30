@@ -21,6 +21,7 @@ function makePasswords() {
                                         hold += possible.charAt(0 + n);
                                         hold += possible.charAt(0 + o);
                                         hold += possible.charAt(0 + p);
+                                        
                                         console.log(hold);
                                         hold = "";
                                 }
