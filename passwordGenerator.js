@@ -5,8 +5,8 @@ var wstream = fs.createWriteStream('test.out');
 function makePasswords() {
     var hold = "";
     var possibleProd = "!#$%&*-0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ^abcdefghijklmnopqrstuvwxyz";
-    var possible = "abcdefgh";
-    var possible4 = "abcd";
+    var possible8 = "abcdefgh";
+    var possible = "abcd";
     
     for (var i = 0; i < possible.length; ++i) {
         for (var j =  0; j < possible.length; ++j) {
@@ -25,11 +25,7 @@ function makePasswords() {
                                         hold += possible.charAt(0 + o);
                                         hold += possible.charAt(0 + p);
                                         
-                                        //console.log('inner: ' + hold + '\n');
-                                        //hold = "";
-                                        
                                         wstream.write(hold + '\n');
-                                        wstream.end();
                                         hold = "";
                                 }
                             }
