@@ -1,6 +1,5 @@
 //make passwords
 var fs = require('fs');
-var wstream = fs.createWriteStream('test.out');
 
 function makePasswords() {
     var hold = "";
@@ -25,7 +24,10 @@ function makePasswords() {
                                         hold += possible.charAt(0 + o);
                                         hold += possible.charAt(0 + p);
                                         
-                                        wstream.write(hold + '\n');
+                                        fs.appendFile( 'test.out', hold, function( err ){
+                                            if(err) throw err;
+                                            console.log( 'test.out appended with: ' + hold );
+                                        } );
                                         hold = "";
                                 }
                             }
