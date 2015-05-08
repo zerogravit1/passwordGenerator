@@ -3,9 +3,10 @@ var fs = require('fs');
 
 function makePasswords() {
     var hold = "";
-    var possibleProd = "!#$%&*-0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ^abcdefghijklmnopqrstuvwxyz";
-    var possible = "abcdefgh";
+    var possible = "!#$%&*-0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ^abcdefghijklmnopqrstuvwxyz";
+    var possible8 = "abcdefgh";
     var possible6 = "abcdef";
+    var possible4 = "abcd";
     
     for (var i = 0; i < possible.length; ++i) {
         for (var j =  0; j < possible.length; ++j) {
@@ -24,10 +25,8 @@ function makePasswords() {
                                         hold += possible.charAt(0 + o);
                                         hold += possible.charAt(0 + p);
                                         
-                                        fs.appendFile( 'test.out', hold, function( err ){
-                                            if(err) throw err;
-                                            console.log( 'test.out appended with: ' + hold );
-                                        } );
+                                        fs.appendFileSync( 'test.out', hold + '\n' );
+                                        //console.log( 'test.out appended with: ' + hold );
                                         hold = "";
                                 }
                             }
@@ -37,7 +36,6 @@ function makePasswords() {
             }
         }
     }
-    wstream.end(function() {console.log('done');});
 }
 
 makePasswords();
