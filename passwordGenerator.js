@@ -3,7 +3,7 @@ var fs = require('fs');
 
 function makePasswords() {
     var hold = "";
-    var possible = "!#$%&*-0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ^abcdefghijklmnopqrstuvwxyz";
+    var possible = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ^0123456789!#$%&*-@";
     var possible8 = "abcdefgh";
     var possible6 = "abcdef";
     var possible4 = "abcd";
